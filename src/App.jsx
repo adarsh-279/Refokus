@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Work from './components/Work'
 import Stripes from './components/Stripes'
 import Projects from './components/Projects'
+import Marquees from './components/Marquees'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Work /> 
       <Stripes />
       <Projects />
+      <Marquees />
     </div>
   )
 }
