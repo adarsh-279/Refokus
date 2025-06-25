@@ -32,12 +32,53 @@ const Projects = () => {
         live: true,
         case: true,
       },
+      {
+        title: "Rainfall",
+        description:
+          "We created a wesbite for Rainfall Ventures, developing prototypes and custom code that ultimately allows their team to update content regularly and with ease.",
+        live: true,
+        case: true,
+      },
+      {
+        title: "Jungle",
+        description:
+          "We crafted a timeless visual system for Jungle Ventures, covering all aspects of web design, and empowered their marketing team to scale organically using Webflow.",
+        live: true,
+        case: false,
+      },
+      {
+        title: "Silvr",
+        description:
+          "We teamed up with financing solutions provider Silvr to audit, refine and evolve their brand.",
+        live: true,
+        case: false,
+      },
+      {
+        title: "Remind",
+        description:
+          "Remind got a new website that is designed and developed to be easy to maintain and ready to learn, reflecting their mission to connect students and families.",
+        live: true,
+        case: true,
+      },
+      {
+        title: "Summon",
+        description:
+          "We created a website for Summon that showcases their innovative technology through animated and captivating Ul components and emerging technologies.",
+        live: true,
+        case: false,
+      },
+      {
+        title: "Like Magic",
+        description:
+          "We designed and developed a magical gaming experience made in Webflow to promote the translation service and their sponsorship of the 2022 Webflow Conference.",
+        live: true,
+        case: true,
+      },
     ];
 
   return (
       <div className='w-full bg-zinc-900 mx-auto'>
-          
-          <Project />
+          {projects.map((item, index) => <Project val={item} /> )}
     </div>
   )
 }
