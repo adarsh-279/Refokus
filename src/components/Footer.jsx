@@ -25,11 +25,11 @@ const Footer = () => {
             ))}
           </div>
           <div className="w-1/4">
-            <h1 className="mb-10">
+            <h1 className="mb-10 text-right">
               Refokus is pioneering digital agency driven by design and
               empowered by technology.
             </h1>
-            <img className='border-2 border-blue-600 px-3 py-2 bg-blue-600'
+            <img className='border-2 border-blue-600 px-3 py-2 bg-blue-600 ml-8'
               src="https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63349803431f1562dccf1802_refokus%20logo.svg"
               alt=""
             />
