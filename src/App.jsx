@@ -5,18 +5,20 @@ import Stripes from './components/Stripes'
 import Projects from './components/Projects'
 import Marquees from './components/Marquees'
 import Cards from './components/Cards'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className='w-full h-screen font-["Satoshi Variable"] bg-zinc-900'>
+    <div className='w-full h-screen font-["Satoshi Variable"] bg-zinc-900 text-zinc-100'>
       <Navbar />
-      <Work /> 
+      <Work />
       <Stripes />
       <Projects />
       <Marquees />
       <Cards />
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default App
