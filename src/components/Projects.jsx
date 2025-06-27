@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Project from './Project'
+import { motion } from 'motion/react';
 
 const Projects = () => {
 
@@ -76,22 +77,27 @@ const Projects = () => {
     },
   ];
 
+  const [pos, setPos] = useState(0)
+  const mover = (val) => {
+    setPos(val*23)
+  }
+
   return (
     <div className='w-full bg-zinc-900 mx-auto relative'>
-      {projects.map((item, index) => <Project val={item} />)}
+      {projects.map((item, index) => <Project val={item} mover={mover} count={index} />)}
       <div className='w-full h-full absolute top-0  pointer-events-none'>
-        <div className='w-96 h-84 bg-zinc-100 absolute left-[48%] -translate-x-[50%] overflow-hidden'>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-          <div className='w-full h-full bg-zinc-100'></div>
-        </div>
+        <motion.div initial={{y: pos, x:"-50%"}} animate={{y: pos+`rem`}} className='w-106 h-84 bg-zinc-100 absolute left-[45%] overflow-hidden'>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+        </motion.div>
       </div>
     </div>
   )
