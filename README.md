@@ -24,7 +24,7 @@ This repository contains the source code for a React-based clone website of Refo
 
 ## Website's Screenshot
 
-(https://github.com/user-attachments/assets/71b84053-3c0e-42f5-95ab-a81d623cddb2)
+![localhost_5173_](https://github.com/user-attachments/assets/71b84053-3c0e-42f5-95ab-a81d623cddb2)
 
 
 ## Contributing
