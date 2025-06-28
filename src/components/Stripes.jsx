@@ -33,7 +33,7 @@ const Stripes = () => {
   return (
       <div className='flex items-center'>
           {data.map((item, index) => {
-              return <Stripe val={item} />
+              return <Stripe key={index} val={item} />;
             })}
     </div>
   )
