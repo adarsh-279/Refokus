@@ -82,10 +82,10 @@ const Work = () => {
                 <h1 className='text-[25vw] leading-none font-medium select-none text-zinc-100'>work</h1>
                 <div className='absolute top-0 w-full h-full'>
                     {images.map((item, index) => item.isActive && (
-                          <img
-                                className="w-60 rounded-lg absolute -translate-x-[50%] -translate-y-[50%]" style={{
-                                    top: item.top,
-                                    left: item.left,
+                          <img key={index}
+                              className="w-60 rounded-lg absolute -translate-x-[50%] -translate-y-[50%]" style={{
+                                top: item.top,
+                                left: item.left,
                             }}
                             src={item.url}
                             alt=""
