@@ -9,13 +9,12 @@ const Cards = () => {
           width={"basis-1/3"}
           start={false}
           para={true}
-          hover={"bg-[#3c3a43]"}
         />
         <Card
           width={"basis-2/3"}
           start={true}
           para={false}
-          hover={"bg-[#4c20ad]"}
+          hover="true"
         />
       </div>
     </div>
