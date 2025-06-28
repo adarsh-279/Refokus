@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
-import Project from './Project'
-import { motion } from 'motion/react';
+import React, { useState } from "react";
+import Project from "../components/Project";
+import { motion } from "framer-motion";
+
+import arqitel from "../assets/videos/arqitel.webm";
+import ttr from "../assets/videos/ttr.webm";
+import yir from "../assets/videos/yir.webm";
+import yahoo from "../assets/videos/yahoo.webm";
+import rainfall from "../assets/videos/rainfall.mp4";
 
 const Projects = () => {
-
   const projects = [
     {
       title: "Arqitel",
@@ -34,73 +39,92 @@ const Projects = () => {
       case: true,
     },
     {
-      title: "Rainfall",
+    title: "Rainfall",
       description:
-        "We created a wesbite for Rainfall Ventures, developing prototypes and custom code that ultimately allows their team to update content regularly and with ease.",
-      live: true,
-      case: true,
-    },
-    {
-      title: "Jungle",
-      description:
-        "We crafted a timeless visual system for Jungle Ventures, covering all aspects of web design, and empowered their marketing team to scale organically using Webflow.",
-      live: true,
-      case: false,
-    },
-    {
-      title: "Silvr",
-      description:
-        "We teamed up with financing solutions provider Silvr to audit, refine and evolve their brand.",
-      live: true,
-      case: false,
-    },
-    {
-      title: "Remind",
-      description:
-        "Remind got a new website that is designed and developed to be easy to maintain and ready to learn, reflecting their mission to connect students and families.",
-      live: true,
-      case: true,
-    },
-    {
-      title: "Summon",
-      description:
-        "We created a website for Summon that showcases their innovative technology through animated and captivating Ul components and emerging technologies.",
-      live: true,
-      case: false,
-    },
-    {
-      title: "Like Magic",
-      description:
-        "We designed and developed a magical gaming experience made in Webflow to promote the translation service and their sponsorship of the 2022 Webflow Conference.",
+        "We created a website for Rainfall Ventures, developing prototypes and custom code that ultimately allows their team to update content regularly and with ease.",
       live: true,
       case: true,
     },
   ];
 
-  const [pos, setPos] = useState(0)
+  const [pos, setPos] = useState(0);
+
   const mover = (val) => {
-    setPos(val*23)
-  }
+    setPos(val * 23);
+  };
 
   return (
-    <div className='w-full bg-zinc-900 mx-auto relative'>
-      {projects.map((item, index) => <Project val={item} mover={mover} count={index} />)}
-      <div className='w-full h-full absolute top-0  pointer-events-none'>
-        <motion.div initial={{y: pos, x:"-50%"}} animate={{y: pos+`rem`}} className='w-106 h-84 bg-zinc-100 absolute left-[45%] overflow-hidden'>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
-          <motion.div className='w-full h-full animate={{y: -pos+`rem`}} transition={{ease: [0.76, 0, 0.24, 1], duration: 0.5}} bg-zinc-100'></motion.div>
+    <div className="relative bg-zinc-900">
+      {projects.map((item, index) => (
+        <Project key={index} val={item} mover={mover} count={index} />
+      ))}
+      <div className="absolute top-0 w-full h-full pointer-events-none">
+        <motion.div
+          initial={{ y: pos, x: "-50%" }}
+          animate={{ y: pos + `rem` }}
+          transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.6 }}
+          className="window absolute w-96 h-64 left-[46%] overflow-hidden"
+        >
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className=" w-full h-full bg-zinc-900"
+          >
+            {pos === 0 && (
+              <video autoPlay muted loop>
+                <source src={arqitel} type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            )}
+          </motion.div>
+
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="mt-28 w-full h-full"
+          >
+            <video autoPlay muted loop>
+              <source src={ttr} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="mt-28 w-full h-full"
+          >
+            <video autoPlay muted loop>
+              <source src={yir} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="mt-28 w-full h-full "
+          >
+            <video autoPlay muted loop>
+              <source src={yahoo} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: -pos + `rem` }}
+            transition={{ ease: [0.76, 0, 0.24, 1], duration: 0.5 }}
+            className="mt-28 w-full h-full "
+          >
+            <video autoPlay muted loop>
+              <source src={rainfall} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          </motion.div>
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
